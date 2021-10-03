@@ -17,9 +17,29 @@ def concatEdgeLetters(arr, pieces):
                   ans.extend(mapping[a])
       return True if arr == ans else False
 
+#Approach 2
+from collections import deque
+def canFormArray(arr, pieces):
+      hmap = {arr[a]:a for a in range(len(arr))}
+      for i in range(len(pieces)):
+            if len(pieces[i])>1:
+                  for k in range(len(pieces[i])-1):
+                        if pieces[i][k] not in hmap or pieces[i][k+1] not in hmap:
+                              return False
+                        if hmap[pieces[i][k+1]]-hmap[pieces[i][k]]>1 or hmap[pieces[i][k]]>hmap[pieces[i][k+1]]:
+                              return False
+            else:
+                if pieces[i][0] not in hmap:
+                    return False
+      return True
+
 arr=[1,2,4,3]
 pieces=[[1], [4,3], [2]]
+print(concatEdgeLetters(arr, pieces))
+print(canFormArray(arr, pieces))
+
 
 arr=[1,2,4,3]
 pieces=[[1], [3,4], [2]]
 print(concatEdgeLetters(arr, pieces))
+print(canFormArray(arr, pieces))
