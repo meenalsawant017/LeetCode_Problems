@@ -1,3 +1,10 @@
+'''
+Solution: To solve this task we need to find sequences of the same letters and
+if the sequence is longer than 3 divide length of this sequence to 3 and add
+result of the division to counters of needed moves.
+
+'''
+
 def min_moves(s):
       res = 0
       size = len(s)
