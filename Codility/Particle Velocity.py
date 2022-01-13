@@ -44,48 +44,24 @@ values	location(from, to)	Velocity
 
 '''
 
-'''def particleVelocity(particles):
-      i = 0
-      j = 1
-      velocity = 0
-      
-      while i < len(particles)- 2:
-            while j < len(particles) - 1:
-                  sliding_window = j - i + 1
-                  prev_velocity = particles[j] -  particles[i]
-                  print( 'i', i,'j',j,'prev_velocity', prev_velocity, 'sliding_window', sliding_window)
-                  if sliding_window != 3:
-                        if j < len(particles) - 1:
-                              j +=1
-                        else:
-                              print('else')
-                              return velocity
-                        curr_velocity = particles[j] -  particles[i+1]
-                        print('i', i,'j',j,'curr_velocity',curr_velocity)
-                        if curr_velocity == prev_velocity:
-                              velocity += abs(prev_velocity)
-                              print('match-->', velocity)
-                  i += 1
-            
-      return velocity
-      '''
 def particleVelocity(particles):
-    print(len(particles))
     numStable = 0
     if len(particles) < 3:
        return 0
     for i in range(len(particles) - 2):
         for j in range(i + 1, len(particles) - 1):
-            print('i', i, 'particles[i]', particles[i], 'j:', j, 'particles[j]', particles[j])
-            print('j diff:', particles[j + 1] - particles[j], 'i diff',particles[i + 1] - particles[i])
             if particles[j + 1] - particles[j] == particles[i + 1] - particles[i]:
                 numStable += 1
-                print('i', i,'j',j)
             else :
                 break
     return numStable if numStable < 1000000000 else -1
 
 
-particles=  [-1, 1, 3, 3, 3, 2, 3, 2, 1, 0]#[7, 7, 7, 7]#[1, 3, 5, 7, 9]
-res = particleVelocity(particles)
-print(res)
+particles = [1, 3, 5, 7, 9] # ans : 6
+print(particleVelocity(particles))
+
+particles = [7, 7, 7, 7] # ans: 3
+print(particleVelocity(particles))
+
+particles = [-1, 1, 3, 3, 3, 2, 3, 2, 1, 0] # ans: 5 
+print(particleVelocity(particles))
