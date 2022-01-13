@@ -1,9 +1,8 @@
 '''
-'''
 We are given a list of positive integers and we have to
 find the maximum even sum for K elements from the list. If we can’t find one, we return -1.
-
 '''
+
 def largest_sum(arr, K):
     print('Given Arr', arr)  
     N = len(arr)
