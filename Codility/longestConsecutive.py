@@ -1,3 +1,4 @@
+#https://leetcode.com/problems/longest-consecutive-sequence/
 def longestConsecutive(nums):
         #create set
         numset = set(nums)
