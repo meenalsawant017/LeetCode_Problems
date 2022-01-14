@@ -20,10 +20,6 @@ def max_length(arr):
                     
         return maxlen
             
-            
-
-
-
 arr =  ["co","dil","ity"]
 res = max_length(arr)
 print(res)
