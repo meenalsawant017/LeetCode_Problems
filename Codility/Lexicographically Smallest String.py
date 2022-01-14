@@ -5,7 +5,7 @@ Lexicographically Smallest String
 Given a string str, the task is to find the lexicographically smallest string that can be formed by removing at most one character from the given string.
 
 Example 1:
-Input: abcda
+Input: abczd
 Output: abcd
 Example 2:
 Input: abcda
