@@ -69,8 +69,8 @@ print(max_inserts(s))
 
 
 
-'''
-def max_inserts(s):
+
+def max_inserts_2(s):
       stack = []
       ch = 0
       insertCount = 0
@@ -108,4 +108,11 @@ def max_inserts(s):
       print('stack:', ''.join(stack))      
       return insertCount
 
-'''
+s = 'aabab' # 3
+print(max_inserts_2(s))
+s = 'dog' # 8
+print(max_inserts_2(s))
+s = 'aa' # 0
+print(max_inserts_2(s))
+s = 'baaaa' # -1
+print(max_inserts_2(s))
