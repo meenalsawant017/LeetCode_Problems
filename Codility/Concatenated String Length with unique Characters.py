@@ -1,13 +1,24 @@
 def max_length(arr):
-      sorted_arr = sorted(arr)
-      count = 0
-      print('sorted_arr:',sorted_arr)
-      for i in range(len(arr) - 1):
-            if set(arr[i]) == set(arr[i+1]):
-                  concat = arr[i] + arr[i+1]
-                  print(concat)
-                  count += 1
-      return count
+        maxlen = 0
+        unique = ['']
+        
+        def isValid(s):
+            if len(s) == len(set(s)):
+                return True
+            
+        
+        for word in arr:
+            print('word:', word)
+            for j in unique:
+                print('j:', j)
+                tmp = word + j
+                if isValid(tmp):
+                    #if(tmp not in unique):
+                    unique.append(tmp)
+                    #print('Appending...', unique)
+                    maxlen = max(maxlen, len(tmp))
+                    
+        return maxlen
             
             
 
